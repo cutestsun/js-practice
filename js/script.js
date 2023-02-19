@@ -38,15 +38,38 @@
  *? Виведіть у консоль усі парні числа від min до max
  */
 
-function logOutNum(min, max) {
-    for (let i = max; i >= min; i--){
-        console.log(i)
-    }
-    for (let i = min; i <= max; i++){
-        if (i % 2 == 0) {
-            console.log(i)
-        }
-    } 
-}
+// function logOutNum(min, max) {
+//     for (let i = max; i >= min; i--){
+//         console.log(i)
+//     }
+//     for (let i = min; i <= max; i++){
+//         if (i % 2 == 0) {
+//             console.log(i)
+//         }
+//     } 
+// }
  
-logOutNum(3, 9);
+// logOutNum(3, 9);
+
+/**
+ *? При завантаженні сторінки користувачеві пропонується
+ *? в prompt ввести число. Введення додається до значення
+ *? змінної total.
+ *? Операція введення числа триває до того часу,
+ *? поки користувач не натисне кнопку Cancel у prompt.
+ *? Після того як користувач припинив введення, натиснувши на
+ *? кнопку Cancel, показати alert з рядком "Загальна сума введених чисел дорівнює [число]."
+ 
+ *! Робити перевірку, що користувач ввів саме число,
+ *! а не довільний набір символів не потрібно.
+ */
+
+let total = 0;
+
+let userInput = prompt('введіть число');
+do {
+    total += Number(userInput);
+    userInput = prompt('введіть число');
+} while (userInput !== null);
+
+alert(`Загальна сума введених чисел дорівнює ${total}.`)
