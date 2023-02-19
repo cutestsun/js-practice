@@ -46,9 +46,9 @@
 //         if (i % 2 == 0) {
 //             console.log(i)
 //         }
-//     } 
+//     }
 // }
- 
+
 // logOutNum(3, 9);
 
 /**
@@ -64,12 +64,26 @@
  *! а не довільний набір символів не потрібно.
  */
 
-let total = 0;
+// let total = 0;
 
-let userInput = prompt('введіть число');
-do {
-    total += Number(userInput);
-    userInput = prompt('введіть число');
-} while (userInput !== null);
+// let userInput = prompt('введіть число');
+// do {
+//     total += Number(userInput);
+//     userInput = prompt('введіть число');
+// } while (userInput !== null);
 
-alert(`Загальна сума введених чисел дорівнює ${total}.`)
+// alert(`Загальна сума введених чисел дорівнює ${total}.`)
+
+/**
+ *?  Записать массив, const arr = ['BEST', 'the', 'foo', 'is',  'JS' ]
+ *? развернуть массив,
+ *? вырезать foo,
+ *? перевести его в строку разделенную пробелами
+ */
+
+const arr = ["BEST", "the", "foo", "is", "JS"];
+let arr1 = arr.slice(0).reverse();
+
+arr1.splice(arr1.indexOf("foo"), 1);
+const result = arr1.join(" ");
+console.log(result);
