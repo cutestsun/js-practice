@@ -150,30 +150,74 @@
 //Оголоси приватні властивості #login #email,
 //доступ до яких зроби через геттер та сеттер login email
 
-class Client {
-  #login;
-  #email;
+// class Client {
+//   #login;
+//   #email;
 
-  constructor(login, email) {
-    (this.#login = login), (this.#email = email);
-  }
+//   constructor(login, email) {
+//     (this.#login = login), (this.#email = email);
+//   }
 
-  get login() {
-    return this.#login;
-  }
-  set login(newLogin) {
-    this.#login = newLogin;
-  }
+//   get login() {
+//     return this.#login;
+//   }
+//   set login(newLogin) {
+//     this.#login = newLogin;
+//   }
 
-  get email() {
-    return this.#email;
+//   get email() {
+//     return this.#email;
+//   }
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+
+// const newClient = new Client("mango", "mango@gmail.com");
+// console.log(newClient.login);
+// newClient.login = "poli";
+// console.log(newClient.login);
+
+//Напиши клас Notes який управляє колекцією нотаток у
+//властивості items.
+//Нотатка - це об'єкт із властивостями text і priority.
+//Додай класу статичний метод Priopity,
+//який буде повертати об'єкт із пріоритетами
+// {
+//   HIGHT: "hight",
+//   LOW: "low",
+// }
+//Додай методи addNote(note), removeNote(text)
+//updatePriority(text, newPriority)
+
+class Notes {
+  static Priority() {
+    return {
+      HIGHT: "hight",
+      LOW: "low",
+    };
   }
-  set email(newEmail) {
-    this.#email = newEmail;
+  constructor() {
+    this.items = []
+    
   }
+  addNote(note) {
+    this.items.push(note)
+  }
+   removeNote(text) {
+     this.items = this.items.filter(item => item.text !== text)
+   }
+updatePriority(text, newPriority){
+  const idx = this.items.findIndex(item => item.text === text)
+  this.items[idx].priority = newPriority
+}
 }
 
-const newClient = new Client("mango", "mango@gmail.com");
-console.log(newClient.login);
-newClient.login = "poli";
-console.log(newClient.login);
+const newNotes = new Notes()
+newNotes.addNote({ text: 'note1', priority: Notes.Priority().HIGHT })
+newNotes.addNote({ text: 'note2', priority: Notes.Priority().LOW })
+newNotes.addNote({ text: 'note3', priority: Notes.Priority().HIGHT })
+console.log(newNotes)
+newNotes.removeNote('note3')
+newNotes.updatePriority('note1', Notes.Priority().LOW)
+
