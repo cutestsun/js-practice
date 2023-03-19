@@ -123,23 +123,57 @@
 //addItems(item) - отримує новий товар та додає його до поточних
 //removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
 
-function Storage(arr) {
-  this.items = arr
-  this.getItems = function () {
-    return this.items
+// function Storage(arr) {
+//   this.items = arr
+//   this.getItems = function () {
+//     return this.items
+//   }
+//   this.addItems = function (item) {
+//   this.items.push(item)
+//   }
+
+// }
+// Storage.prototype.removeItem = function (item) {
+//   const indexForRemoving = this.items.indexOf(item)
+//   if (indexForRemoving !== -1) {
+//     this.items.splice(indexForRemoving,1)
+//   }
+// }
+// const newStorage = new Storage(['PC', 'Laptop', 'Tablet'])
+// console.log(newStorage.getItems())
+// newStorage.removeItem('PC')
+// console.log(newStorage.getItems())
+
+//TODO:=============================================
+//Напиши клас Client який створює об'єкт
+//з ​​властивостями login email
+//Оголоси приватні властивості #login #email,
+//доступ до яких зроби через геттер та сеттер login email
+
+class Client {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    (this.#login = login), (this.#email = email);
   }
-  this.addItems = function (item) {
-  this.items.push(item)
+
+  get login() {
+    return this.#login;
   }
-  
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+
+  get email() {
+    return this.#email;
+  }
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
 }
-Storage.prototype.removeItem = function (item) {
-  const indexForRemoving = this.items.indexOf(item)
-  if (indexForRemoving !== -1) {
-    this.items.splice(indexForRemoving,1)
-  }
-}
-const newStorage = new Storage(['PC', 'Laptop', 'Tablet'])
-console.log(newStorage.getItems())
-newStorage.removeItem('PC')
-console.log(newStorage.getItems())
+
+const newClient = new Client("mango", "mango@gmail.com");
+console.log(newClient.login);
+newClient.login = "poli";
+console.log(newClient.login);
