@@ -227,42 +227,87 @@
 //Створити клас TopLevelWorker, у якого є властивість hierarchyLevel
 //і який успадковує клас Worker, додаючи метод getHierarchyLevel
 
-const HIERARCHY_LEVEL = {
-  TOP: "top",
-  BOTTOM: "bottom",
-};
+// const HIERARCHY_LEVEL = {
+//   TOP: "top",
+//   BOTTOM: "bottom",
+// };
 
-const Obj = {
-  name: "Mango",
-  surname: "Worker",
-  age: 30,
-  position: "FE developer",
-  salary: 5000,
-};
+// const Obj = {
+//   name: "Mango",
+//   surname: "Worker",
+//   age: 30,
+//   position: "FE developer",
+//   salary: 5000,
+// };
 
-class Worker {
-  constructor({ name, age, salary }) {
+// class Worker {
+//   constructor({ name, age, salary }) {
+//     this.name = name;
+//     this.age = age;
+//     this.salary = salary;
+//   }
+
+//   getSalary() {
+//     return this.salary;
+//   }
+// }
+
+// class TopLevelWorker extends Worker {
+//   constructor(hierarchyLevel, obj) {
+//     super(obj);
+//     this.hierarchyLevel = hierarchyLevel;
+//   }
+
+//   getHierarchyLevel() {
+//     return this.hierarchyLevel;
+//   }
+// }
+
+// const newTopLevelWorker = new TopLevelWorker(HIERARCHY_LEVEL.TOP, Obj);
+// console.log(newTopLevelWorker.getHierarchyLevel());
+// console.log(newTopLevelWorker.getSalary());
+
+//  Створити загальний клас Animal для тварин.
+// У зоопарку повинні бути різні типи тварин, такі як ссавці, птахи, рептилії тощо.
+// Кожен тип тварин повинен мати свої властивості та методи, наприклад,
+//  методи для отримання інформації про тварину та для годівлі тварин.
+
+class Animals{
+  constructor(name, age) {
     this.name = name;
     this.age = age;
-    this.salary = salary;
+  }
+  getInfo() {
+    return {name: this.name, age: this.age}
+  }
+  feed() {
+    console.log("Your animal is happy")
   }
 
-  getSalary() {
-    return this.salary;
+}
+
+class Dog extends Animals{
+  constructor(name, age){
+  super(name, age)
+  }
+  sayHi() {
+    console.log('Woof-woof')
   }
 }
 
-class TopLevelWorker extends Worker {
-  constructor(hierarchyLevel, obj) {
-    super(obj);
-    this.hierarchyLevel = hierarchyLevel;
+class Cat extends Animals{
+  constructor(name, age){
+  super(name, age)
   }
-
-  getHierarchyLevel() {
-    return this.hierarchyLevel;
+  sayHi() {
+    console.log('Meow')
   }
 }
 
-const newTopLevelWorker = new TopLevelWorker(HIERARCHY_LEVEL.TOP, Obj);
-console.log(newTopLevelWorker.getHierarchyLevel());
-console.log(newTopLevelWorker.getSalary());
+const newDog = new Dog('Bobik', 3)
+newDog.feed()
+newDog.sayHi()
+
+const newCat = new Cat('Murka', 4)
+newCat.feed()
+newCat.sayHi()
