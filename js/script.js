@@ -81,9 +81,35 @@
  *? перевести его в строку разделенную пробелами
  */
 
-const arr = ["BEST", "the", "foo", "is", "JS"];
-let arr1 = arr.slice(0).reverse();
+// const arr = ["BEST", "the", "foo", "is", "JS"];
+// let arr1 = arr.slice(0).reverse();
 
-arr1.splice(arr1.indexOf("foo"), 1);
-const result = arr1.join(" ");
-console.log(result);
+// arr1.splice(arr1.indexOf("foo"), 1);
+// const result = arr1.join(" ");
+// console.log(result);
+
+//TODO:=============================================
+//Напиши функцію конструктор User для створення користувача з такими властивостями
+//a. userName - ім'я, рядок
+//b. age - вік, число
+//c. numbersOfPost - кількість постів, число
+//d. клас очікує 1 параметр - об'єкт налаштувань з однойменними властивостями
+
+//Додай метод getInfo(), який повертає рядок:
+//`Користувачеві ${} ${} років і в нього ${} публікацій.`
+
+function User({ userName, age, numberOfPost }) {
+  this.userName = userName;
+  this.age = age;
+  this.numberOfPost = numberOfPost;
+  this.getInfo = function () {
+    return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numberOfPost} публікацій.`;
+  };
+}
+
+const newUser = new User({
+  userName: "Андрій",
+  age: 34,
+  numberOfPost: 12,
+});
+console.log(newUser.getInfo());
