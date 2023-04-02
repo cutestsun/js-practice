@@ -63,21 +63,20 @@ const boxEl = document.querySelector("#box");
 const decreaseBtnEl = document.querySelector("#decrease");
 const increaseBtnEl = document.querySelector("#increase");
 
-decreaseBtnEl.addEventListener('click', decreaseBoxSize)
-increaseBtnEl.addEventListener('click', increaseBoxSize)
+decreaseBtnEl.addEventListener("click", decreaseBoxSize);
+increaseBtnEl.addEventListener("click", increaseBoxSize);
 
 function decreaseBoxSize() {
-    let size = parseInt(getComputedStyle(boxEl).width)
-    boxEl.style.width = size-10 + 'px'
-    boxEl.style.height = size-10 + 'px'
-    
+  let size = parseInt(getComputedStyle(boxEl).width);
+  boxEl.style.width = size - 10 + "px";
+  boxEl.style.height = size - 10 + "px";
 }
 
 function increaseBoxSize() {
-    let size = parseInt(getComputedStyle(boxEl).width)
-    
-    boxEl.style.width = size+10 + 'px'
-    boxEl.style.height = size+10 + 'px'
+  let size = parseInt(getComputedStyle(boxEl).width);
+
+  boxEl.style.width = size + 10 + "px";
+  boxEl.style.height = size + 10 + "px";
 }
 
 //TODO:==============================================
@@ -85,6 +84,18 @@ function increaseBoxSize() {
 Завдання 5
 Додайте слухач кліку на window і визначте чи клікнув користувач у дів з id="place".
 */
+
+const placeEl = document.querySelector("#place");
+
+addEventListener("click", onPlaceClick);
+
+function onPlaceClick(e) {
+  if (e.target.getAttribute("id") !== "place") {
+    return;
+  }
+
+  console.log("div");
+}
 
 //TODO:==============================================
 /*
