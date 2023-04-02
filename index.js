@@ -103,6 +103,15 @@ function onPlaceClick(e) {
 Натиснувши кнопку "Подвоювати", збільшити значення
 у кожному елементі списку у 2 рази
 */
+const listItemEl = document.querySelectorAll(".listItem");
+const BtnEl = document.querySelector("#double");
+BtnEl.addEventListener("click", doubleValueEl);
+function doubleValueEl() {
+  listItemEl.forEach((item) => {
+    item.textContent = item.textContent * 2;
+    // item.textContent = BigInt(item.textContent) ** 2n; отримуємо не infinity а число
+  });
+}
 
 //TODO:==============================================
 /*
