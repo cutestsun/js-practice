@@ -113,6 +113,24 @@ function doubleValueEl() {
   });
 }
 
+// =====
+// замикання
+// =====
+
+// const number = 100;
+
+// BtnEl.addEventListener("click", doubleValueEl(number));
+
+// function doubleValueEl(a) {
+//   return function () {
+//     listItemEl.forEach((item) => {
+//       item.textContent = item.textContent * a;
+//     });
+//   };
+// }
+
+// =====
+
 //TODO:==============================================
 /*
 Завдання 7
