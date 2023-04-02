@@ -38,6 +38,20 @@ function onSwapBtnClick() {
 "Розкрити", при повторному натисканні текст знову стає доступним
 і кнопка набуває початкового вигляду.
 */
+const hideInputEl = document.querySelector("#passwordInput");
+const hideBtnEl = document.querySelector("#passwordButton");
+
+hideBtnEl.addEventListener("click", onHideBtnClick);
+
+function onHideBtnClick() {
+  if (hideInputEl.type === "text") {
+    hideInputEl.setAttribute("type", "password");
+    hideBtnEl.textContent = "Розкрити";
+  } else {
+    hideInputEl.type = "text";
+    hideBtnEl.textContent = "Скрити";
+  }
+}
 
 //TODO:==============================================
 /*
