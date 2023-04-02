@@ -18,19 +18,19 @@
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
 */
 
-const swapBtnEl = document.querySelector("#swapButton");
-const leftSwapInputEl = document.querySelector("#leftSwapInput");
-const rightSwapInputEl = document.querySelector("#rightSwapInput");
+// const swapBtnEl = document.querySelector("#swapButton");
+// const leftSwapInputEl = document.querySelector("#leftSwapInput");
+// const rightSwapInputEl = document.querySelector("#rightSwapInput");
 
-swapBtnEl.addEventListener("click", onSwapBtnClick);
+// swapBtnEl.addEventListener("click", onSwapBtnClick);
 
-function onSwapBtnClick() {
-  const leftInputValue = leftSwapInputEl.value;
-  const rightInputValue = rightSwapInputEl.value;
+// function onSwapBtnClick() {
+//   const leftInputValue = leftSwapInputEl.value;
+//   const rightInputValue = rightSwapInputEl.value;
 
-  leftSwapInputEl.value = rightInputValue;
-  rightSwapInputEl.value = leftInputValue;
-}
+//   leftSwapInputEl.value = rightInputValue;
+//   rightSwapInputEl.value = leftInputValue;
+// }
 //TODO:==============================================
 /*
 Завдання 3
@@ -38,26 +38,47 @@ function onSwapBtnClick() {
 "Розкрити", при повторному натисканні текст знову стає доступним
 і кнопка набуває початкового вигляду.
 */
-const hideInputEl = document.querySelector("#passwordInput");
-const hideBtnEl = document.querySelector("#passwordButton");
+// const hideInputEl = document.querySelector("#passwordInput");
+// const hideBtnEl = document.querySelector("#passwordButton");
 
-hideBtnEl.addEventListener("click", onHideBtnClick);
+// hideBtnEl.addEventListener("click", onHideBtnClick);
 
-function onHideBtnClick() {
-  if (hideInputEl.type === "text") {
-    hideInputEl.setAttribute("type", "password");
-    hideBtnEl.textContent = "Розкрити";
-  } else {
-    hideInputEl.type = "text";
-    hideBtnEl.textContent = "Скрити";
-  }
-}
+// function onHideBtnClick() {
+//   if (hideInputEl.type === "text") {
+//     hideInputEl.setAttribute("type", "password");
+//     hideBtnEl.textContent = "Розкрити";
+//   } else {
+//     hideInputEl.type = "text";
+//     hideBtnEl.textContent = "Скрити";
+//   }
+// }
 
 //TODO:==============================================
 /*
 Завдання 4
 Кнопка "Зменшити" робить квадрат менше на 10 пікселів,  "Збільшити" - більше на 10 пікселів.
 */
+
+const boxEl = document.querySelector("#box");
+const decreaseBtnEl = document.querySelector("#decrease");
+const increaseBtnEl = document.querySelector("#increase");
+
+decreaseBtnEl.addEventListener('click', decreaseBoxSize)
+increaseBtnEl.addEventListener('click', increaseBoxSize)
+
+function decreaseBoxSize() {
+    let size = parseInt(getComputedStyle(boxEl).width)
+    boxEl.style.width = size-10 + 'px'
+    boxEl.style.height = size-10 + 'px'
+    
+}
+
+function increaseBoxSize() {
+    let size = parseInt(getComputedStyle(boxEl).width)
+    
+    boxEl.style.width = size+10 + 'px'
+    boxEl.style.height = size+10 + 'px'
+}
 
 //TODO:==============================================
 /*
