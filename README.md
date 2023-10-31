@@ -1,2 +1,1 @@
-# js-practice
-📚 JavaScript practice tasks
+# 📚 JavaScript practice tasks
